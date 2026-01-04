@@ -27,7 +27,7 @@ Demo samples are available at [https://github.com/aigcdemos/prosodyTTS].
 
 | 韵律标记 | TTS文本 | 标记前 | 标记后 |
 |---------|---------|--------|--------|
-| **长音** | 拖音的拖→字应该持续很长时间。 | [长音前](audio_stress_before.wav)| [长音后](audio_stress_before.wav)|
+| **长音** | 拖音的拖→字应该持续很长时间。 | [长音前](samples/贾宝玉_drawl_ori_0.wav)| [长音后](samples/贾宝玉_drawl_flow_llm_label_0.wav)|
 | **长音** | 直播间的家人们，我→们直播间带来→了苹果最新的十→七promax，给您带来全新的使用体验。 | [长音前](audio_stress_before.wav) | [长音后](audio_stress_before.wav) |
 | **重音** | 这句话应该是用↑重音进行强调。 | [重音前](audio_stress_before.wav)| [重音后](audio_stress_before.wav) |
 | **升调** | 这句话应该是用↗升调的语气说的。 | [升调前](audio_stress_before.wav)| [升调后](audio_stress_before.wav) |
