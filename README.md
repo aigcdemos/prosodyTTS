@@ -1,0 +1,33 @@
+# Title：Prosody Injection for LLM-based TTS System
+
+[![Paper](https://img.shields.io/badge/Paper-PDF-red)](link-to-paper.pdf)
+[![Conference](https://img.shields.io/badge/Conference-ConferenceName-Year-blue)](conference-link)
+[![GitHub stars](https://img.shields.io/github/stars/yourusername/repo?style=social)](https://github.com/yourusername/repo)
+
+## 📖 Abstract
+
+This paper proposes a prosody modeling and injection method for LLM-based Text-to-Speech (TTS) systems. 
+The approach incorporates prosodic markers at specific textual positions to enable precise prosody control. 
+Notably, it requires no structural modifications to the base TTS model. 
+Instead, prosodic information is extracted from the dataset, and the LLM within the TTS system 
+is fine-tuned using text-audio pairs enriched with these prosodic markers. 
+This process equips the model with the capability to recognize and reproduce prosodic patterns. 
+Concurrently, we fine-tune a text-based LLM to convert user-described emotional cues into sequences of prosodic markers and prompts, 
+which are then inserted into the input text. Experiments conducted on the VoxBox Chinese dataset 
+demonstrate that our method effectively injects prosodic variations into synthesized speech. 
+Demo samples are available at [https://github.com/aigcdemos/prosodyTTS]. 
+
+## 🔍 Contributions
+
+- **1**：A finer-grained prosody extraction method, namely character-level prosody modeling, which enables precise control over the temporal variation of prosody rather than overall prosody control. Specifically, it analyzes the prosodic variation for each character in a sentence and inserts corresponding prosodic markers at positions where prosodic changes are prominent, e.g., if the fundamental frequency (F0) difference between two adjacent characters exceeds a threshold, a rising marker (for increased F0) or a falling marker (for decreased F0) is added. Based on this method, a dataset with detailed descriptions of prosodic changes was built.
+- **2**：An LLM fine-tuning method that enables the model to insert fine-grained prosodic control information into the text to be synthesized based on user prompts (e.g., fine-grained emotional changes over time rather than a single overall emotion label), thereby reflecting the temporal variation of prosody.
+
+
+## 💡 Samples
+
+| 韵律标记 | TTS文本 | 说话人 |
+|---------|---------|--------|
+| **长音**<br>拖音的拖→字应该持续很长时间。 | 拖音前<br>拖音后 | 直播间的家人们，我→们直播间带来→了苹果最新的十→七promax，<br>给您带来全新的使用体验。 |
+| **重音**<br>这句话应该是用个重音进行强调。 | 重音前<br>重音后 | 直播间的家人们，我→们直播间带来→了苹果最新的十→七promax，<br>给您带来全新的使用体验。 |
+| **升调**<br>这句话应该是用升调的语气说的。 | 升调前<br>升调后 | 直播间的家人们，我→们直播间带来→了苹果最新的十→七promax，<br>给您带来全新的使用体验。 |
+| **降调**<br>这句话应该是用降调的语气说的。 | 降调前<br>降调后 | 直播间的家人们，我→们直播间带来→了苹果最新的十→七promax，<br>给您带来全新的使用体验。 |
